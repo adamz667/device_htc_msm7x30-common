@@ -12,7 +12,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+ifndef BOARDCONFIG_INCLUDE_ONCE
+BOARDCONFIG_INCLUDE_ONCE := true
 -include device/htc/msm7x30-common/BoardConfigCommon.mk
+endif
 
 # inherit from common msm7x30 Recovery
 -include device/htc/7x30-recovery/BoardConfigCommon.mk
@@ -32,6 +35,7 @@ TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
 TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
 
 TARGET_SPECIFIC_HEADER_PATH := device/htc/msm7x30-common/include
+TARGET_CUSTOM_WIFI := ../../device/htc/msm7x30-common/hardware/wifi/wifi.c
 
 # Wifi related defines
 BOARD_WPA_SUPPLICANT_DRIVER      := WEXT
@@ -52,7 +56,7 @@ BOARD_USES_ADRENO_200 := true
 COMMON_GLOBAL_CFLAGS += -DREFRESH_RATE=60 -DQCOM_HARDWARE
 
 USE_OPENGL_RENDERER := true
-TARGET_USES_C2D_COMPOSITION := false
+TARGET_USES_C2D_COMPOSITION := true
 TARGET_USES_SF_BYPASS := true
 TARGET_HAVE_BYPASS := true
 TARGET_USES_OVERLAY := true
@@ -60,7 +64,8 @@ TARGET_QCOM_HDMI_OUT := false
 TARGET_GRALLOC_USES_ASHMEM := true
 TARGET_USES_GENLOCK := true
 
-ENABLE_WTF_USE_ACCELERATED_COMPOSITING := true
+#ENABLE_WTF_USE_ACCELERATED_COMPOSITING := true
+#BOARD_EGL_GRALLOC_USAGE_FILTER := true
 
 TARGET_FORCE_CPU_UPLOAD := true
 
@@ -81,11 +86,12 @@ BOARD_USES_QCOM_LIBRPC := true
 BOARD_USES_QCOM_GPS := true
 BOARD_USE_QCOM_PMEM := true
 
-#BOARD_CAMERA_USE_GETBUFFERINFO := true
+BOARD_CAMERA_USE_GETBUFFERINFO := true
 
-#BOARD_OVERLAY_FORMAT_YCbCr_420_SP := true
+BOARD_OVERLAY_FORMAT_YCbCr_420_SP := true
 
 BOARD_VENDOR_QCOM_GPS_LOC_API_AMSS_VERSION := 1240
 
 BOARD_HAVE_FM_RADIO := true
 BOARD_GLOBAL_CFLAGS += -DHAVE_FM_RADIO
+
