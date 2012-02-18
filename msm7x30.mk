@@ -62,8 +62,7 @@ PRODUCT_PACKAGES += \
     libmemalloc \
     liboverlay \
     libQcomUI \
-    libtilerenderer \
-    camera.msm7x30
+    libtilerenderer
 
 # Media
 PRODUCT_PACKAGES += \
