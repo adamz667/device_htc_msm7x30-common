@@ -14,6 +14,7 @@
 #include <linux/types.h>
 #include <linux/ioctl.h>
 
+#define VEN_S_BASE      0x00000000
 #define VEN_S_SUCCESS (VEN_S_BASE) 
 #define VEN_S_EFAIL (VEN_S_BASE+1) 
 #define VEN_S_EFATAL (VEN_S_BASE+2) 
