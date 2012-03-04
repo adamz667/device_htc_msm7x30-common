@@ -12,11 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-ifndef BOARDCONFIG_INCLUDE_ONCE
-BOARDCONFIG_INCLUDE_ONCE := true
--include device/htc/msm7x30-common/BoardConfigCommon.mk
-endif
-
 # inherit from common msm7x30 Recovery
 -include device/htc/7x30-recovery/BoardConfigCommon.mk
 
