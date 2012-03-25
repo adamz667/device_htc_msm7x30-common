@@ -51,7 +51,8 @@ PRODUCT_PACKAGES += \
     audio.a2dp.default \
     audio_policy.msm7x30 \
     audio.primary.msm7x30 \
-    libaudioutils
+    libaudioutils \
+    libtinyalsa
 
 # Video
 PRODUCT_PACKAGES += \
@@ -63,6 +64,10 @@ PRODUCT_PACKAGES += \
     liboverlay \
     libQcomUI \
     libtilerenderer
+
+# Camera
+PRODUCT_PACKAGES += \
+    camera.msm7x30
 
 # Media
 PRODUCT_PACKAGES += \
