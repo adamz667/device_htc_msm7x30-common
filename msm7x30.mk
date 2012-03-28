@@ -46,6 +46,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/htc/msm7x30-common/media_profiles.xml:system/etc/media_profiles.xml
 
+PRODUCT_PACKAGE_OVERLAYS += device/htc/msm7x30-common/overlay
+
 # Audio
 PRODUCT_PACKAGES += \
     audio.a2dp.default \
