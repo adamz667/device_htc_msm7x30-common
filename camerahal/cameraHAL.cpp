@@ -861,6 +861,8 @@ int camera_set_parameters(struct camera_device * device, const char *params)
     camParams.dump();
 #endif
     
+    //Use this size for all resolutions
+    camParams.set(android::CameraParameters::KEY_PREVIEW_SIZE, "640x480");
     rv = gCameraHals[dev->cameraid]->setParameters(camParams);
     
 #if 0
