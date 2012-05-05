@@ -37,7 +37,7 @@ TARGET_SCORPION_BIONIC_PLDOFFS := 6
 TARGET_SCORPION_BIONIC_PLDSIZE := 128
 
 TARGET_SPECIFIC_HEADER_PATH := device/htc/msm7x30-common/include
-TARGET_CUSTOM_WIFI := ../../device/htc/msm7x30-common/hardware/wifi/wifi.c
+#TARGET_CUSTOM_WIFI := ../../device/htc/msm7x30-common/hardware/wifi/wifi.c
 
 # Wifi related defines
 BOARD_WPA_SUPPLICANT_DRIVER      := WEXT
