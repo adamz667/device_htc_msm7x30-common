@@ -12,8 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
--include device/htc/msm7x30-common/BoardConfigCommon.mk
-
 # inherit from common msm7x30 Recovery
 -include device/htc/7x30-recovery/BoardConfigCommon.mk
 
@@ -26,11 +24,20 @@ TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_ARCH_VARIANT := armv7-a-neon
 ARCH_ARM_HAVE_TLS_REGISTER := true
+ARCH_ARM_HAVE_VFP := true
+USE_MALLOC_ALIGNMENT := 16
+TARGET_HAVE_TSLIB := false
 
+TARGET_EXTRA_CFLAGS += $(call cc-option,-march=armv7-a -mtune=cortex-a8)
 TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
 TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
+TARGET_USE_SCORPION_BIONIC_OPTIMIZATION := true
+TARGET_USE_SCORPION_PLD_SET := true
+TARGET_SCORPION_BIONIC_PLDOFFS := 6
+TARGET_SCORPION_BIONIC_PLDSIZE := 128
 
 TARGET_SPECIFIC_HEADER_PATH := device/htc/msm7x30-common/include
+#TARGET_CUSTOM_WIFI := ../../device/htc/msm7x30-common/hardware/wifi/wifi.c
 
 # Wifi related defines
 BOARD_WPA_SUPPLICANT_DRIVER      := WEXT
@@ -48,21 +55,21 @@ WIFI_BAND                        := 802_11_ABG
 
 BOARD_USES_ADRENO_200 := true
 
-COMMON_GLOBAL_CFLAGS += -DREFRESH_RATE=60 -DQCOM_HARDWARE
+COMMON_GLOBAL_CFLAGS += -DQCOM_HARDWARE -DSCREEN_RELEASE -DREFRESH_RATE=60
 USE_OPENGL_RENDERER := true
 TARGET_USES_C2D_COMPOSITION := false
-TARGET_USES_SF_BYPASS := false
-TARGET_HAVE_BYPASS := false
+TARGET_USES_SF_BYPASS := true
+TARGET_HAVE_BYPASS := true
 TARGET_USES_OVERLAY := true
-TARGET_QCOM_HDMI_OUT := true
-TARGET_GRALLOC_USES_ASHMEM := false
+TARGET_QCOM_HDMI_OUT := false
+TARGET_GRALLOC_USES_ASHMEM := true
 TARGET_USES_GENLOCK := true
-
-TARGET_FORCE_CPU_UPLOAD := true
 
 BOARD_PREBUILT_LIBAUDIO := false
 BOARD_USES_QCOM_AUDIO_VOIPMUTE := true
 BOARD_USES_QCOM_AUDIO_RESETALL := true
+
+DYNAMIC_SHARED_LIBV8SO := true
 
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
@@ -77,6 +84,10 @@ BOARD_USES_QCOM_LIBRPC := true
 BOARD_USES_QCOM_GPS := true
 BOARD_USE_QCOM_PMEM := true
 
+BOARD_USES_HTC_CAMERA := true
+TARGET_USE_CAF_PARAMS := true
+CAMERA_CONVERT_COLORS := true
+COMMON_GLOBAL_CFLAGS += -DBYPASS_OFFSET
 COMMON_GLOBAL_CFLAGS += -DBINDER_COMPAT
 
 #BOARD_CAMERA_USE_GETBUFFERINFO := true
