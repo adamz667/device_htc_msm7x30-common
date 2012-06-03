@@ -14,7 +14,7 @@ LOCAL_C_INCLUDES := $(TOP)/frameworks/base/include
 
 LOCAL_SHARED_LIBRARIES := liblog libutils libcutils
 LOCAL_SHARED_LIBRARIES += libui libhardware libcamera_client
-LOCAL_SHARED_LIBRARIES += libcamera libbinder
+LOCAL_SHARED_LIBRARIES += libcamera
 LOCAL_PRELINK_MODULE := false
 
 ifeq ($(BOARD_HAVE_HTC_FFC), true)
