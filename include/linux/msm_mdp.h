@@ -423,7 +423,6 @@ struct msmfb_mdp_pp {
 };
 
 
->>>>>>> upstream/ics
 struct mdp_page_protection {
 	uint32_t page_protection;
 };
