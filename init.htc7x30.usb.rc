@@ -9,7 +9,7 @@ on property:sys.usb.config=none
 
 on property:sys.usb.config=adb
     start adbd
-    write /sys/class/android_usb/android0/f_adb/on 1
+    write /sys/devices/platform/android_usb/usb_function_switch 2 
     setprop sys.usb.state $sys.usb.config
 
 on property:sys.usb.config=mass_storage,adb
@@ -20,20 +20,6 @@ on property:sys.usb.config=mass_storage,adb
 on property:sys.usb.config=mass_storage
     write /sys/devices/platform/android_usb/usb_function_switch 1
     setprop sys.usb.state $sys.usb.config
-
-# USB accessory configuration
-on property:sys.usb.config=accessory
-    write /sys/devices/platform/android_usb/usb_function_switch 8192
-    setprop sys.usb.state $sys.usb.config
-
-# USB accessory configuration, with adb
-on property:sys.usb.config=accessory,adb
-    start adbd
-    write /sys/devices/platform/android_usb/usb_function_switch 8194
-    setprop sys.usb.state $sys.usb.config
-
-on property:persist.sys.usb.config=*
-    setprop sys.usb.config $persist.sys.usb.config
 
 on property:sys.usb.config=rndis
     exec /system/bin/netcfg usb0 up
@@ -52,6 +38,18 @@ on property:sys.usb.config=mtp
 
 on property:sys.usb.config=mtp,adb
     start adbd
+    write /sys/devices/platform/android_usb/usb_function_switch 130
+    setprop sys.usb.state $sys.usb.config
+
+
+on property:sys.usb.config=ptp
+    write /sys/class/android_usb/android0/f_ptp/on 1
+    write /sys/devices/platform/android_usb/usb_function_switch 128
+    setprop sys.usb.state $sys.usb.config
+
+on property:sys.usb.config=ptp,adb
+    start adbd
+    write /sys/class/android_usb/android0/f_ptp/on 1
     write /sys/devices/platform/android_usb/usb_function_switch 130
     setprop sys.usb.state $sys.usb.config
 
