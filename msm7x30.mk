@@ -51,9 +51,9 @@ PRODUCT_PACKAGE_OVERLAYS += device/htc/msm7x30-common/overlay
 
 # Audio
 PRODUCT_PACKAGES += \
-#    audio.a2dp.default \
-#    audio_policy.msm7x30 \
-#    audio.primary.msm7x30 \
+    audio.a2dp.default \
+    audio_policy.msm7x30 \
+    audio.primary.msm7x30 \
     libaudioutils \
     libtinyalsa
 
