@@ -49,9 +49,9 @@ PRODUCT_COPY_FILES += \
     device/htc/msm7x30-common/media_codecs.xml:system/etc/media_codecs.xml \
     device/htc/msm7x30-common/audio_policy.conf:system/etc/audio_policy.conf
 
-# camera file
+# Camera
 PRODUCT_COPY_FILES += \
-    device/htc/msm7x30-common/libsurfaceflinger_client.so:system/lib
+    device/htc/msm7x30-common/libsurfaceflinger_client.so:system/lib/libsurfaceflinger_client.so
 
 PRODUCT_PACKAGE_OVERLAYS += device/htc/msm7x30-common/overlay
 
