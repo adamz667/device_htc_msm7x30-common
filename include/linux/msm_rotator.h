@@ -26,11 +26,12 @@ struct msm_rotator_img_info {
 	struct msmfb_img  src;
 	struct msmfb_img  dst;
 	struct mdp_rect src_rect;
-	unsigned int    dst_x;
-	unsigned int    dst_y;
-	unsigned char   rotations;
+	unsigned int dst_x;
+	unsigned int dst_y;
+	unsigned char rotations;
 	int enable;
-	unsigned int	downscale_ratio;
+	unsigned int downscale_ratio;
+	unsigned int secure;
 };
 
 struct msm_rotator_data_info {
