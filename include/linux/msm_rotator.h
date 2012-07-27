@@ -31,7 +31,9 @@ struct msm_rotator_img_info {
 	unsigned char rotations;
 	int enable;
 	unsigned int downscale_ratio;
+#ifndef QCOM_NO_SECURE_PLAYBACK
 	unsigned int secure;
+#endif
 };
 
 struct msm_rotator_data_info {
