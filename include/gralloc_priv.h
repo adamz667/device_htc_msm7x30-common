@@ -147,7 +147,7 @@ public:
     T& getHeadValue() const    //return the value of the first item in the queue
     {                          //without modification to the structure
         if (isEmpty()) {
-            LOGE("Error can't get head of empty queue");
+            ALOGE("Error can't get head of empty queue");
             return *dummy;
         }
         return front->data;
@@ -351,7 +351,7 @@ struct private_handle_t {
                 h->numInts != sNumInts || h->numFds != sNumFds ||
                 hnd->magic != sMagic)
         {
-            LOGE("invalid gralloc handle (at %p)", h);
+            ALOGE("invalid gralloc handle (at %p)", h);
             return -EINVAL;
         }
         return 0;
