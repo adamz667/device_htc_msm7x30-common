@@ -46,8 +46,8 @@ PRODUCT_COPY_FILES += \
 # media configs
 PRODUCT_COPY_FILES += \
     device/htc/msm7x30-common/media_profiles.xml:system/etc/media_profiles.xml \
-    device/htc/msm7x30-common/media_codecs.xml:system/etc/media_codecs.xml
-
+    device/htc/msm7x30-common/media_codecs.xml:system/etc/media_codecs.xml \
+    device/htc/msm7x30-common/audio_policy.conf:system/etc/audio_policy.conf
 # Camera
 PRODUCT_COPY_FILES += \
     device/htc/msm7x30-common/prebuilt/libsurfaceflinger_client.so:system/lib/libsurfaceflinger_client.so
@@ -58,7 +58,6 @@ PRODUCT_PACKAGE_OVERLAYS += device/htc/msm7x30-common/overlay
 PRODUCT_PACKAGES += \
     audio.a2dp.default \
     audio.primary.msm7x30 \
-    audio_policy.conf \
     libaudioutils \
     libtinyalsa
 
@@ -80,7 +79,8 @@ PRODUCT_PACKAGES += \
     libmm-omxcore \
     libdivxdrmdecrypt \
     libOmxVdec \
-    libstagefrighthw
+    libstagefrighthw \
+    libI420colorconvert
 
 # Misc
 PRODUCT_PACKAGES += \
