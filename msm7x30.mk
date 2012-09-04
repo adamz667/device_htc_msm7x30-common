@@ -73,6 +73,10 @@ PRODUCT_PACKAGES += \
     libQcomUI \
     libtilerenderer
 
+# Power HAL
+PRODUCT_PACKAGES += \
+    power.msm7x30
+
 # Media
 PRODUCT_PACKAGES += \
     libOmxCore \
