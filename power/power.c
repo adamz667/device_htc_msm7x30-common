@@ -147,7 +147,6 @@ static void cm_power_hint(struct power_module *module, power_hint_t hint,
 
     switch (hint) {
     case POWER_HINT_INTERACTION:
-    case POWER_HINT_CPU_BOOST:
         if (boostpulse_open(cm) >= 0) {
             if (data != NULL)
                 duration = (int) data;
