@@ -47,7 +47,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/htc/msm7x30-common/media_profiles.xml:system/etc/media_profiles.xml \
     device/htc/msm7x30-common/media_codecs.xml:system/etc/media_codecs.xml \
-    device/htc/msm7x30-common/audio_policy.conf:system/etc/audio_policy.conf
+    device/htc/msm7x30-common/audio_policy.conf:system/etc/audio_policy.conf \
+    device/htx/msm7x30-common/bt_vendor.conf:system/etc/bluetooth/bt_vendor.conf
 
 # Camera
 PRODUCT_COPY_FILES += \
