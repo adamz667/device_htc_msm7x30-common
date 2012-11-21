@@ -53,6 +53,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/htc/msm7x30-common/prebuilt/libsurfaceflinger_client.so:system/lib/libsurfaceflinger_client.so
 
+# hostapd prebuilts
+PRODUCT_COPY_FILES += \
+    device/htc/msm7x30-common/prebuilt/hostapd:system/bin/hostapd \
+    device/htc/msm7x30-common/prebuilt/hostapd_cli:system/bin/hostapd_cli
+
 PRODUCT_PACKAGE_OVERLAYS += device/htc/msm7x30-common/overlay
 
 # Audio
