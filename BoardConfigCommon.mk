@@ -27,7 +27,6 @@ ARCH_ARM_HAVE_TLS_REGISTER := true
 ARCH_ARM_HAVE_VFP := true
 USE_MALLOC_ALIGNMENT := 16
 TARGET_HAVE_TSLIB := false
-TARGET_DISABLE_ARM_PIE := true
 
 TARGET_EXTRA_CFLAGS += $(call cc-option,-march=armv7-a -mtune=cortex-a8)
 TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
