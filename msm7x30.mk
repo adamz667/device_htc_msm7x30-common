@@ -58,6 +58,10 @@ PRODUCT_COPY_FILES += \
     device/htc/msm7x30-common/prebuilt/hostapd:system/bin/hostapd \
     device/htc/msm7x30-common/prebuilt/hostapd_cli:system/bin/hostapd_cli
 
+# adb hack
+PRODUCT_COPY_FILES += \
+    device/htc/msm7x30-common/prebuilt/20fixup:system/etc/init.d/20fixup
+
 PRODUCT_PACKAGE_OVERLAYS += device/htc/msm7x30-common/overlay
 
 # Audio
